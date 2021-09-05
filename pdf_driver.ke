@@ -1,0 +1,51 @@
+load engine;
+load script;
+load system;
+load pdf.ke;
+
+using namespace write from engine;
+using namespace clear from engine;
+using namespace mods from script;
+using namespace extension from system;
+using namespace window from system;
+using namespace create from system;
+
+this.file = "library";
+this.file namespace = "pdf";
+
+pdf::pdf_compiler():
+this.object = new object();
+object():
+:loop
+object.join & if 1==%i% goto :ext
+goto loop & :ext
+create object();
+window object = write;
+write object extension;
+write = "true";
+join.object():
+mode_x = "$";
+mode_y = "$";
+text_format = "$";
+text_color = "$";
+background_color = "$";
+make_line = "$";
+new_line = "$";
+text_write = "$";
+return $
+
+pdf::pdf_view():
+use mods;
+use window;
+use clear;
+engine.clear;
+engine.mods.pdf;
+engine.window = create new window.name "PDF";
+engine.window = show window.name "PDF";
+engine.window = display on "PDF" "object() $";
+engine.window = wait for exit;
+engine.window = exit;
+
+pdf::pdf_create():
+return object() $ for this.object();
+object.join $
