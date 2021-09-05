@@ -1,0 +1,31 @@
+load engine;
+load pdf_driver;
+
+using namespace pdf from pdf_driver;
+
+main():
+rem Nie modyfikuj tego kodu!
+pdf_set();
+pdf_text();
+pdf::pdf_compiler();
+pdf::pdf_view();
+
+pdf::pdf_set():
+pdf::pdf_codepage = "UTF-8";
+pdf::pdf_author = "Twórca pliku PDF";
+pdf::pdf_description = "Opis pliku PDF";
+pdf::pdf_version = "1.0.0";
+
+pdf::pdf_text():
+use pdf from pdf_driver;
+mode_x = "";
+mode_y = "";
+text_format = "middle";
+text_color = "black";
+background_color = "white";
+make_line = "black";
+new_line;
+text_write = "Plik PDF napisany w języku KE.";
+new_line;
+text_write = "Hello World!";
+pdf_create();
